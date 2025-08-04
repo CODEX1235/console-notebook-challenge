@@ -1,11 +1,14 @@
 # TODO: Agrega el código de las clases del modelo aquí. Borra este comentario al terminar.
 from datetime import datetime
+from symtable import Class
+
+
 class Note:
     HIGH : str = "HIGH"
     MEDIUM : str = "MEDIUM"
     LOW: str = "LOW"
 
-    def __init__(self,code:str,title:str,text:str,importance:str,create_datetime: datetime, tags : list):
+    def __init__(self,code:int,title:str,text:str,importance:str,create_datetime: datetime, tags : list):
         self.code = code
         self.title = title
         self.text = text
@@ -18,6 +21,23 @@ class Note:
 
     def __str__(self)->str:
         return f"Date: {self.create_datetime} , {self.title}: {self.text}"
+
+class Notebook:
+    def __init__(self):
+        self.notes: list[Note] = []
+
+    def add_note(self,title:str,text:str,importance:str) ->int:
+        code = len(self.notes)+ 1
+        Note = (code,title,text,importance)
+        self.notes.append(Note)
+
+
+
+
+
+
+
+
 
 
 
