@@ -8,7 +8,7 @@ class Note:
     MEDIUM : str = "MEDIUM"
     LOW: str = "LOW"
 
-    def __init__(self,code:int,title:str,text:str,importance:str):
+    def __init__(self, code: int, title: str, text: str,importance: str):
         self.code = code
         self.title = title
         self.text = text
