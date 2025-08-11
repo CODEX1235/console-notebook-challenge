@@ -27,10 +27,32 @@ class Notebook:
     def __init__(self):
         self.notes: list[Note] = []
 
-    def add_note(self,title: str, text: str, importance: str) ->int:
+    def add_note(self,title: str, text: str, importance: str) -> int:
         code : str = str(len(self.notes))+ 1
         note : Note = (code, title, text, importance)
         self.notes.append(note)
+
+    def delete_note(self, code: str):
+        for note in self.notes:
+            if note.code==code:
+                self.notes.remove(note)
+
+    def important_notes(self) -> list[Note]:
+        important: list[Note] = []
+
+        for note in self.notes:
+            if note.importance == Note.HIGH or note.importance == Note.MEDIUM:
+                important.append(note)
+            return important
+
+    def notes_by_tag(self, tag: str) -> list[Note]:
+        note: list[Note] = []
+        for note in self.notes:
+            for note in self.notes:
+
+
+
+
 
 
 
