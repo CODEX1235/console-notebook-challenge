@@ -27,10 +27,10 @@ class Notebook:
     def __init__(self):
         self.notes: list[Note] = []
 
-    def add_note(self,title:str,text:str,importance:str) ->int:
-        code = len(self.notes)+ 1
-        Note = (code,title,text,importance)
-        self.notes.append(Note)
+    def add_note(self,title: str, text: str, importance: str) ->int:
+        code : str = str(len(self.notes))+ 1
+        note : Note = (code, title, text, importance)
+        self.notes.append(note)
 
 
 
